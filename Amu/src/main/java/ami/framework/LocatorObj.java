@@ -15,10 +15,10 @@ public class LocatorObj {
 	public static final String NAME ="NAME";
 	private String strLocatorType;
 	
-	public LocatorObj(String locator,String LocatorDescription,String locatorType) {
+	public LocatorObj(String locator,String locatorType) {
 		objectValue=locator;
 		this.locatorValue =getLocatorObject(objectValue,locatorType);
-		this.objDescription= LocatorDescription;
+		//this.objDescription= LocatorDescription;
 		strLocatorType = locatorType;
 	}
 	

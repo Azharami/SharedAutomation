@@ -2,9 +2,13 @@ package automation;
 
 import java.io.File;
 
+import org.testng.annotations.BeforeClass;
+
+	
 public class BaseTest {
 	
 	String path="/Users/Ami/git/SharedAutomation/Amu/resourceDirectory/Snap";
+	@BeforeClass
 	public void createFolder(String path) {
 		
 			File testDirectory = new File(path);

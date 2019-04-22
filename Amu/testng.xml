@@ -2,8 +2,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
   <test thread-count="5" name="Chrome">
+  	<parameter name="browser" value ="Chrome"/>
   <classes>
   <class name ="automation.FullCheckoutTest"/>
   </classes>
-  </test> <!-- Test -->
+  </test> <!-- Chrome Test -->
+  
+ 
 </suite> <!-- Suite -->
