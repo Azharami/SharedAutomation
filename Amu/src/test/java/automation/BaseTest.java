@@ -2,12 +2,13 @@ package automation;
 
 import java.io.File;
 
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 	
 public class BaseTest {
 	
-	String path="/Users/Ami/git/SharedAutomation/Amu/resourceDirectory/Snap";
+	String path="resource/Snap";
 	@BeforeClass
 	public void createFolder(String path) {
 		
@@ -22,7 +23,6 @@ public class BaseTest {
 				System.out.println("Directory already exists: " + path);
 			}
 		}
-		
 	}
 
 

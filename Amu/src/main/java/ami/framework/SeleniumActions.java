@@ -29,6 +29,15 @@ public class SeleniumActions {
 		}
 		return this;
 	}
+
+	public SeleniumActions closeBrowser(WebDriver webDriver){
+		try{
+			webDriver.close();
+		}catch (WebDriverException e) {
+			e.printStackTrace();
+		}
+		return this;
+	}
 	
 	public SeleniumActions enterText(LocatorObj locator,String text,WebDriver webDriver) {
 		try {

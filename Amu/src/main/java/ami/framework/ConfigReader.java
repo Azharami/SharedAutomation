@@ -44,7 +44,20 @@ public class ConfigReader {
 	 		 if(driverPath!= null) return driverPath;
 	 		 else throw new RuntimeException("driverPath not specified in the Configuration.properties file."); 
 	 		 }
-	 	
+
+	 		 public String getUserName(){
+	 	String userName = properties.getProperty("prt_Uname");
+				 if(userName!= null) return userName;
+				 else throw new RuntimeException("User name not specified in the Configuration.properties file.");
+			 }
+
+	public String getPassword(){
+		String userPassword = properties.getProperty("prt_pwd");
+		if(userPassword!= null) return userPassword;
+		else throw new RuntimeException("User password not specified in the Configuration.properties file.");
+	}
+
+
 	public WebDriver initDriver(String browser) {
 		
 		
@@ -67,7 +80,7 @@ public class ConfigReader {
 		
 		
 		try {
-			System.setProperty("webdriver.chrome.driver","/Users/Ami/Desktop/Automation_Drivers/chromedriver_2");
+			System.setProperty("webdriver.chrome.driver",getDriverPath());
 			webDriver = new ChromeDriver();
 		}catch(WebDriverException webdriverException) {
 		
@@ -77,8 +90,6 @@ public class ConfigReader {
 		return webDriver;
 	}
 	private WebDriver getFirefoxDriver() {
-		
-		
 		try {
 			System.setProperty("webdriver.gecko.driver",properties.getProperty("driverPath"));
 			webDriver = new ChromeDriver();
